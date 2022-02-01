@@ -7,12 +7,12 @@ def parenthesesBalancer(s):
         elif c == ')':
             count -= 1
         if count < 0:
-            return False;
+            return False
 
     if count == 0:
         return True
     else:
-        return False;
+        return False
 
 # leap year
 # year must be a valid year
