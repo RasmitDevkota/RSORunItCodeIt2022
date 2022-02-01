@@ -46,9 +46,11 @@ def weave(a, b):
 
     return num
 
+# hex to rgb
+# h should be a valid hexadecimal color code
 def hexToRGB(h):
     h = h.lstrip('#')
-    rgb = ()
+    rgb = ""
     for i in (0, 2, 4):
         val = h[i:i+2]
         rgbVal = 0
@@ -60,5 +62,5 @@ def hexToRGB(h):
             elif i >= 65 and i <= 70:
                 rgbVal += (i - 55) * base
             base *= 16
-        rgb += (rgbVal,)
+        rgb += (str(rgbVal) + " ")
     return rgb
