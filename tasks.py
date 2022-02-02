@@ -1,3 +1,5 @@
+import math
+
 # parentheses balancer
 def parenthesesBalancer(s):
     count = 0
@@ -64,3 +66,47 @@ def hexToRGB(h):
             base *= 16
         rgb += (str(rgbVal) + " ")
     return rgb
+
+def timeConvert(miliTime):
+    hours, minutes = miliTime.split(":")
+    hours, minutes = int(hours), int(minutes)
+    setting = "AM"
+    if hours == 0 & minutes == 0:
+        print("12:00 AM")
+    elif hours > 12:
+        setting = "PM"
+        hours -= 12
+        print(("%02d:%02d " + setting) % (hours, minutes))
+    else:
+        print(("%02d:%02d " + setting) % (hours, minutes))
+
+def pythag(numbers):
+        legA, legB = numbers.split(" ")
+        legA = int(legA)
+        legB = int(legB)
+        print(math.sqrt(legA*legA + legB*legB))
+
+def square_checker(number):
+    print(math.sqrt(int(number)) - int(math.sqrt(int(number))) == 0)
+
+def most_frequency(my_string):
+    max_frequency = {}
+    for i in my_string:
+        if i in max_frequency:
+            max_frequency[i] += 1
+        else:
+            max_frequency[i] = 1
+    print(max(max_frequency, key = max_frequency.get))
+
+def primality_tester(a):
+    a = int(a)
+    if a < 2: return False
+    for x in range(2, int(math.sqrt(a)) + 1):
+        if a % x == 0:
+            return False
+    return True
+most_frequency("heyyy wsp")
+square_checker("16")
+timeConvert("13:45")
+pythag("7 18")
+print(primality_tester("36"))
