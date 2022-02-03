@@ -1,7 +1,7 @@
 import math
 
 # parentheses balancer
-def parenthesesBalancer(s):
+def parentheses_balancer(s):
     count = 0
     for c in s:
         if c == '(':
@@ -18,7 +18,7 @@ def parenthesesBalancer(s):
 
 # leap year
 # year must be a valid year
-def leapYear(year):
+def leap_year(year):
     if year % 4 == 0:
         if year % 100 == 0:
             if year % 400 == 0:
@@ -30,8 +30,8 @@ def leapYear(year):
 # weave
 # a and b must be positive integers
 def weave(a, b):
-    pos = 1;
-    num = 0;
+    pos = 1
+    num = 0
 
     while a > 0 or b > 0:
         digit = b % 10
@@ -50,7 +50,7 @@ def weave(a, b):
 
 # hex to rgb
 # h should be a valid hexadecimal color code
-def hexToRGB(h):
+def hex_to_rgb(h):
     h = h.lstrip('#')
     rgb = ""
     for i in (0, 2, 4):
@@ -66,6 +66,18 @@ def hexToRGB(h):
             base *= 16
         rgb += (str(rgbVal) + " ")
     return rgb
+
+def word_count(s):
+    word = "cat"
+    count = 0
+    arr = s.split()
+    for i in arr:
+        if i[0:3] == word:
+            if len(i) == 3:
+                count += 1
+            elif len(i) > 3 and i[3] in ('?', ',', '.', '!'):
+                count += 1
+    return count
 
 def timeConvert(miliTime):
     hours, minutes = miliTime.split(":")
