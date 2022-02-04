@@ -16,9 +16,12 @@ def parentheses_balancer(s):
     else:
         return False
 
-# leap year
-# year must be a valid year
 def leap_year(year):
+    if not year.isdecimal():
+        return "Please enter a valid year"
+
+    year = int(year)
+    
     if year % 4 == 0:
         if year % 100 == 0:
             if year % 400 == 0:
@@ -27,12 +30,15 @@ def leap_year(year):
         return True
     return False
 
-# weave
-# a and b must be positive integers
 def weave(a, b):
     pos = 1
     num = 0
+    if not (a.isdecimal() and b.isdecimal()):
+        return "Please enter two valid integers"
 
+    a = int(a)
+    b = int(b)
+    
     while a > 0 or b > 0:
         digit = b % 10
         digit *= pos
@@ -48,11 +54,13 @@ def weave(a, b):
 
     return num
 
-# hex to rgb
-# h should be a valid hexadecimal color code
 def hex_to_rgb(h):
     h = h.lstrip('#')
     rgb = ""
+    
+    if len(h) != 6:
+        return "Please enter a valid hex color code"
+    
     for i in (0, 2, 4):
         val = h[i:i+2]
         rgbVal = 0
@@ -63,6 +71,8 @@ def hex_to_rgb(h):
                 rgbVal += (i - 48) * base
             elif i >= 65 and i <= 70:
                 rgbVal += (i - 55) * base
+            else:
+                return "Please enter a valid hex color code"
             base *= 16
         rgb += (str(rgbVal) + " ")
     return rgb
