@@ -78,7 +78,7 @@ def parentheses_balance_checker(s):
     return "All parentheses are {} in the input string".format("balanced" if count == 0 else "not balanced")
 
 def square_checker(number):
-    if not isint(number):
+    if not number.isdecimal():
         return "Please enter a positive integer < 5000000!"
 
     if int(number) > 2000000:
@@ -99,8 +99,9 @@ def secret_function(text):
     even_letters = 0
 
     for letter in text:
-        if alphabet.index(letter.upper()) % 2 == 0:
-            even_letters += 1
+        if letter.upper() in alphabet:
+            if alphabet.index(letter.upper()) % 2 == 0:
+                even_letters += 1
 
     return even_letters
 
@@ -342,7 +343,7 @@ def typing_test(quote_selection):
     wpm = correct_words/time * 60
     accuracy = correct_characters/quote_len * 100
 
-    return "You typed {} words ({} characters) at an average of {} words per minute for {} seconds with an accuracy of {}%!".format(round(quote_len/5, 1), quote_len, round(wpm), round(time), round(accuracy))
+    return "You typed {} words ({} characters) at an average of {} words per minute for {} seconds with an accuracy of {}%!".format(round(correct_words, 1), correct_characters, round(wpm), round(time), round(accuracy))
 
 def main():
     now = datetime.now()
