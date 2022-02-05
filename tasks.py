@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 
 def isint(number):
     try:
@@ -336,7 +336,7 @@ def typing_test(quote_selection):
             break
         elif user_input[c] == quote[c]:
             correct_characters += 1
-    
+
     correct_words = correct_characters/5
     
     time = (end_time - start_time).total_seconds()
