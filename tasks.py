@@ -17,11 +17,17 @@ def isfloat(num):
         return False
 
 def military_to_standard_converter(military_time):
+    if not ":" in military_time:
+        return "Please enter a military timestamp formatted as HH:MM!"
+
     for unit in military_time.split(":"):
         if not unit.isdecimal():
             return "Please enter a military timestamp formatted as HH:MM!"
 
     hours, minutes = [int(unit) for unit in military_time.split(":")]
+
+    if not (hours in range(0, 24) and minutes in range(0, 60)):
+        return "Please enter a military timestamp formatted as HH:MM!"
 
     if hours == 0 & minutes == 0:
         return "12:00 AM"
@@ -75,12 +81,12 @@ def square_checker(number):
     if not isint(number):
         return "Please enter a positive integer < 5000000!"
 
-    if int(number > 2000000):
+    if int(number) > 2000000:
         return "Please enter a positive integer < 2000000!"
 
-    number_squared = int(number) ** 2
+    sqrt_number = float(number) ** 0.5
 
-    is_square = number_squared == int(number_squared)
+    is_square = int(sqrt_number) == sqrt_number
 
     return "{} {} a perfect square".format(number, "is" if is_square else "isn't")
 
@@ -93,7 +99,7 @@ def secret_function(text):
     even_letters = 0
 
     for letter in text:
-        if alphabet.index(letter.toupper()) % 2 == 0:
+        if alphabet.index(letter.upper()) % 2 == 0:
             even_letters += 1
 
     return even_letters
@@ -332,13 +338,11 @@ def typing_test(quote_selection):
     
     correct_words = correct_characters/5
     
-    print(correct_characters, correct_words)
-    
     time = (end_time - start_time).total_seconds()
     wpm = correct_words/time * 60
     accuracy = correct_characters/quote_len * 100
-    
-    return "You typed {} words at an average of {} words per minute for {} seconds with an accuracy of {}%!".format(words, round(wpm), round(time), round(accuracy))
+
+    return "You typed {} words ({} characters) at an average of {} words per minute for {} seconds with an accuracy of {}%!".format(round(quote_len/5, 1), quote_len, round(wpm), round(time), round(accuracy))
 
 def main():
     now = datetime.now()
