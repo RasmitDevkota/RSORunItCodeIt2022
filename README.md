@@ -62,6 +62,7 @@ If you competed at this tournament, please consider completing our feedback surv
 ### Event Supervisors
 * Rasmit (GitHub - [DrAlienTech](https://github.com/DrAlienTech), Scioly.org - [RasmitDevkota](https://scioly.org/wiki/index.php/User:RasmitDevkota), Email - [rdatch101@gmail.com](mailto:rdatch101@gmail.com))
 * Royce (GitHub - [RoyceAroc](https://github.com/RoyceAroc), Scioly.org - [Royce](https://scioly.org/wiki/index.php/User:Royce), Email - [royceaden@gmail.com](mailto:royceaden@gmail.com))
+* Shruti (GitHub - [agkistrodon](https://github.com/agkistrodon), Email - [shrutibadrish@gmail.com](mailto:shrutibadrish@gmail.com))
 
 ### Special Thanks
 Special thanks to [Samyok](https://github.com/samyok) for setting up and letting us use his Run It Code It platform [rici.app](https://rici.app) for this competition! It worked seamlessly and made the entire process much smoother—we definitely couldn't've done it without his help!
